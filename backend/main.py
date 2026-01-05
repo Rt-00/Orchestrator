@@ -1,38 +1,44 @@
-from datetime import datetime
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from settings import settings
+from routers import health_router
 
 app = FastAPI(
-    title="SSH Orchestrator API",
-    description="Execute scrips on multiple hosts via SSH",
-    version="0.0.1",
+    title=settings.APP_NAME,
+    description=settings.APP_DESCRIPTION,
+    version=settings.APP_VERSION,
 )
 
+# CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=settings.CORS_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+# Routers
+app.include_router(health_router)
+
+
 @app.get("/")
 async def root():
     return {
-        "message": "SSH Orchestrator API",
-        "version": "0.0.1",
-        "docs": "/docs"
+        "message": settings.APP_NAME,
+        "version": settings.APP_VERSION,
+        "docs": "/docs",
     }
 
-@app.get("/api/health")
-async def health_check():
-    return {
-        "status": "healthy",
-        "timestamp": datetime.now().isoformat()
-    }
 
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run(
+        "main:app",
+        host=settings.HOST,
+        port=settings.PORT,
+        reload=True,
+        log_level=settings.LOG_LEVEL,
+    )
