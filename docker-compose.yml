@@ -1,0 +1,11 @@
+services:
+  api:
+    build: backend/.
+    container_name: ssh-api
+    ports:
+      - "8000:8000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - LOG_LEVEL=info
+    restart: unless-stopped
