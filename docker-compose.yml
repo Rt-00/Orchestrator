@@ -1,7 +1,7 @@
 services:
   api:
     build: backend/.
-    container_name: ssh-api
+    container_name: orchestrator-api
     ports:
       - "8000:8000"
     environment:

@@ -4,7 +4,7 @@ from typing import List
 
 class Settings(BaseSettings):
     # App
-    APP_NAME: str = "SSH Remote Execution API"
+    APP_NAME: str = "Orchestrator API"
     APP_DESCRIPTION: str = "Execute scripts on multiple hosts via SSH"
     APP_VERSION: str = "1.0.0"
 
