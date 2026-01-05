@@ -1,35 +1,47 @@
-.idea
-.ipynb_checkpoints
-.mypy_cache
-.vscode
-__pycache__
-.pytest_cache
-htmlcov
-dist
-site
-.coverage*
-coverage.xml
-.netlify
-test.db
-log.txt
-Pipfile.lock
-env3.*
-env
-docs_build
-site_build
-venv
-docs.zip
-archive.zip
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# vim temporary files
+# Environment
+.env
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
 *~
-.*.sw?
-.cache
 
-# macOS
+# OS
 .DS_Store
+Thumbs.db
 
-# Ignore while the setup still depends on requirements.txt files
-uv.lock
+# Logs
+*.log
 
-.codspeed
+# SSH Keys
+*.pem
+*.key
+id_rsa*
