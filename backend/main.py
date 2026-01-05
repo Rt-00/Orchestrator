@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from settings import settings
-from routers import health_router
+from routers import health_router, ssh_router
 
 app = FastAPI(
     title=settings.APP_NAME,
@@ -21,6 +21,7 @@ app.add_middleware(
 
 # Routers
 app.include_router(health_router)
+app.include_router(ssh_router, prefix="/api/ssh")
 
 
 @app.get("/")
