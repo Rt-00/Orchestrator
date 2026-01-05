@@ -1,6 +1,9 @@
+import asyncio
+import uuid
 from fastapi import APIRouter, HTTPException
 
-from models import ExecutionStatus
+from models import ExecutionRequest, ExecutionStatus
+from services.ssh_service import ssh_service
 from storage import (
     delete_execution_data,
     get_execution,
@@ -9,6 +12,22 @@ from storage import (
 )
 
 router = APIRouter(tags=["SSH"])
+
+
+@router.post("/execute")
+async def execute_script(request: ExecutionRequest):
+    """Execute a script on multiple hosts via SSH"""
+    execution_id = str(uuid.uuid4())
+
+    # Start execution in background
+    asyncio.create_task(
+        ssh_service.execute_on_multiple_hosts(execution_id, request)
+    )
+
+    return {
+        "execution_id": execution_id,
+        "message": "Execution started"
+    }
 
 
 @router.get("/status/{execution_id}", response_model=ExecutionStatus)
