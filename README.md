@@ -37,10 +37,6 @@ O SSH Remote Execution é uma ferramenta web que permite executar scripts bash e
 - 🛠️ Manutenção e atualização em lote
 - 📊 Monitoramento e auditoria de servidores
 - ⚡ Execução de comandos ad-hoc em massa
-
-<!-- 📸 ADICIONE AQUI: GIF mostrando execução de script -->
-<!-- ![Demo](docs/screenshots/demo.gif) -->
-
 ---
 
 ## ✨ Funcionalidades
@@ -363,21 +359,6 @@ docker system prune -a            # Limpa cache Docker
 ---
 
 ## 🐳 Docker
-
-### Variáveis de Ambiente
-
-**Backend (docker-compose.yml)**
-```yaml
-environment:
-  - HOST=0.0.0.0
-  - PORT=8000
-  - LOG_LEVEL=info  # debug, info, warning, error
-```
-
-**Frontend (.env)**
-```bash
-VITE_API_URL=http://localhost:8000
-```
 
 ### Portas
 
