@@ -22,8 +22,6 @@ Execute scripts em múltiplos servidores SSH simultaneamente com interface web m
 - [Uso](#uso)
 - [Desenvolvimento](#desenvolvimento)
 - [Docker](#docker)
-- [API](#api)
-- [Contribuindo](#contribuindo)
 - [Licença](#licença)
 
 ---
