@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ExecutionStatus } from "@/types/ssh.types";
+import type { ExecutionStatus } from "../types/ssh.types";
 
 defineProps<{
   status: ExecutionStatus | null;

@@ -1,6 +1,10 @@
 import { ref, computed } from "vue";
-import { sshApi } from "@/services/sshApi";
-import type { Host, ExecutionStatus, ExecutionResult } from "@/types/ssh.types";
+import { sshApi } from "../services/sshApi";
+import type {
+  Host,
+  ExecutionStatus,
+  ExecutionResult,
+} from "../types/ssh.types";
 
 export function useScriptExecution() {
   const currentExecutionId = ref<string | null>(null);

@@ -9,3 +9,11 @@ services:
       - PORT=8000
       - LOG_LEVEL=info
     restart: unless-stopped
+
+  frontend:
+    build: frontend/.
+    container_name: orchestrator-ui
+    ports:
+      - "80:80"
+    depends_on:
+      - api

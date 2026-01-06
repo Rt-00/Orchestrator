@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ExecutionResult } from "@/types/ssh.types";
+import type { ExecutionResult } from "../types/ssh.types";
 
 defineProps<{
   results: ExecutionResult[];

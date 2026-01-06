@@ -1,4 +1,4 @@
-import type { CSVHost, Host } from "@/types/ssh.types";
+import type { CSVHost, Host } from "../types/ssh.types";
 
 export function parseCSV(csvText: string): CSVHost[] {
   const lines = csvText.trim().split("\n");

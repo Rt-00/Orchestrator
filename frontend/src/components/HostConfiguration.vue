@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import type { Host, UploadMessage } from "@/types/ssh.types";
-import { parseCSV, csvToHosts, downloadCSVTemplate } from "@/utils/csvUtils";
+import type { Host, UploadMessage } from "../types/ssh.types";
+import { parseCSV, csvToHosts, downloadCSVTemplate } from "../utils/csvUtils";
 
 const props = defineProps<{
   modelValue: Host[];

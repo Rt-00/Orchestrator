@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
-import type { Host, TabType } from "@/types/ssh.types";
-import { useScriptExecution } from "@/composables/useScriptExecution";
-import HostsConfiguration from "@/components/HostConfiguration.vue";
-import ScriptConfiguration from "@/components/ScriptConfiguration.vue";
-import ExecutionStatus from "@/components/ExecutionStatus.vue";
-import ExecutionResults from "@/components/ExecutionResults.vue";
+import type { Host, TabType } from "./types/ssh.types";
+import { useScriptExecution } from "./composables/useScriptExecution";
+import HostsConfiguration from "./components/HostConfiguration.vue";
+import ScriptConfiguration from "./components/ScriptConfiguration.vue";
+import ExecutionStatus from "./components/ExecutionStatus.vue";
+import ExecutionResults from "./components/ExecutionResults.vue";
 
 const hosts = ref<Host[]>([
   { hostname: "", port: 22, username: "", password: "" },

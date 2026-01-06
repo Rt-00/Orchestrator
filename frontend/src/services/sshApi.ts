@@ -3,7 +3,7 @@ import type {
   ExecutionPayload,
   ExecutionStatus,
   ExecutionResult,
-} from "@/types/ssh.types";
+} from "../types/ssh.types";
 
 const API_URL = "http://localhost:8000";
 
